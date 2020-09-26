@@ -14,22 +14,22 @@ class CreatePrediosTable extends Migration
     public function up()
     {
         Schema::create('predios', function (Blueprint $table) {
-            $table->id('idpredio');
+            $table->increments('idpredio');
 
-            $table->bigIncrements('id_empresa')->unsigned();
+            $table->bigIncrements('id_empresa')->unsigned()->autoIncrement(false);
             $table->foreign('id_empresa')->references('idempresa')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->bigIncrements('id_revisionestrato')->unsigned();
-            $table->foreign('id_revisionestrato')->references('idrevisionestrato')->on('revisionesestratos')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigIncrements('id_revisionestrato')->unsigned()->autoIncrement(false);
+            $table->foreign('id_revisionestrato')->references('idrevisionestrato')->on('revision_estratos')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->bigIncrements('id_propietario')->unsigned();
+            $table->bigIncrements('id_propietario')->unsigned()->autoIncrement(false);
             $table->foreign('id_propietario')->references('idpropietario')->on('propietarios')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->bigIncrements('id_recursoreposicion')->unsigned();
-            $table->foreign('id_recursoreposicion')->references('idrecursoreposicion')->on('recursoreposicions')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigIncrements('id_recursoreposicion')->unsigned()->autoIncrement(false);
+            $table->foreign('id_recursoreposicion')->references('idrecursoreposicion')->on('recurso_reposicions')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->bigIncrements('id_subsidioapelacion')->unsigned();
-            $table->foreign('id_subsidioapelacion')->references('idsubsidioapelacion')->on('apelacionsubsidios')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigIncrements('id_subsidioapelacion')->unsigned()->autoIncrement(false);
+            $table->foreign('id_subsidioapelacion')->references('idsubsidioapelacion')->on('apelacion_subcidios')->onDelete('cascade')->onUpdate('cascade');
             
             $table->integer('codpredial')->nullable($value = false);
             $table->integer('matricula')->nullable($value = false);
