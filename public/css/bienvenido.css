@@ -1,0 +1,19 @@
+body{
+    background-color: chartreuse;
+}
+
+#input_predial{
+    
+    width: 400px
+}
+
+#buscador_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+#content{
+    width: auto;
+    height: auto;
+}
