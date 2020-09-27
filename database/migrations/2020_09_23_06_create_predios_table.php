@@ -14,7 +14,7 @@ class CreatePrediosTable extends Migration
     public function up()
     {
         Schema::create('predios', function (Blueprint $table) {
-            $table->increments('idpredio');
+            $table->bigIncrements('idpredio');
 
             $table->bigIncrements('id_empresa')->unsigned()->autoIncrement(false);
             $table->foreign('id_empresa')->references('idempresa')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
