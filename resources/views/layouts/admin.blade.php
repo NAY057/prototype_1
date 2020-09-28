@@ -176,7 +176,7 @@
                   	<div class="row">
 	                  	<div class="col-md-12">
 		                          <!--Contenido-->
-                              <h3>@yield('index_admin')</h3>
+                              @yield('index_admin')
 		                          <!--Fin Contenido-->
                            </div>
                         </div>

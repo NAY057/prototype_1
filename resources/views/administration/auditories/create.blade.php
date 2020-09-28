@@ -1,4 +1,4 @@
-@extends('layouts.admin')
-@section('index_admin')
+@extends('layouts.app')
+@section('index_app')
     <h3>create</h3>
 @endsection

@@ -31,7 +31,7 @@ class CreatePrediosTable extends Migration
             $table->bigIncrements('id_subsidioapelacion')->unsigned()->autoIncrement(false);
             $table->foreign('id_subsidioapelacion')->references('idsubsidioapelacion')->on('apelacion_subcidios')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->integer('codpredial')->nullable($value = false);
+            $table->integer('codpredial')->length(30)->nullable($value = false);
             $table->integer('matricula')->nullable($value = false);
             $table->string('tipopredio')->length(30)->nullable($value = false);
             $table->string('destinoeconomico')->length(45)->nullable($value = false);

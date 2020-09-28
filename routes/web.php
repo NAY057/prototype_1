@@ -17,9 +17,18 @@ Route::get('/', function () {
     return view('bienvenido');
 });
 
-Route::get('/administration', function () {
-    return view('administration/auditories/index');
-});
+Route::resource('/administration', 'App\Http\Controllers\PredioController');
+
+Route::get('/administration', 'App\Http\Controllers\PredioController@index');
+
+Route::post('/administration/predios', 'App\Http\Controllers\PredioController@store')->name('predios.store');
+
+Route::delete('/administration/{predio}', 'App\Http\Controllers\PredioController@destroy')->name('predios.store');
+
+// Route::get('/administration', function () {
+
+//     return view('administration/auditories/index');
+// });
 
 
 Auth::routes();

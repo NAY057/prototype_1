@@ -14,7 +14,9 @@ class PredioController extends Controller
      */
     public function index()
     {
-        //
+        return view('administration.auditories.index', [
+            'predios'=> predio::all()
+        ]);
     }
 
     /**

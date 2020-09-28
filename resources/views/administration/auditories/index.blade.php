@@ -9,21 +9,21 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
-                <table>
+                <table class="table">
                     <thead>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Cedula</th>
+                        <th>Predio Id</th>
+                        <th>Cod Predial</th>
+                        <th>Matricula</th>
+                        <th>Comuna</th>
                     </thead>
-                    {{-- @foreach ($predios as $predio) --}}
+                    @foreach ($predios as $predio)
                         <tr>
-                            <td>Id</td>
-                            <td>Nombre</td>
-                            <td>Apellido</td>
-                            <td>Cedula</td>
+                            <td>{{$predio->idpredio}}</td>
+                            <td>{{$predio->codpredial}}</td>
+                            <td>{{$predio->matricula}}</td>
+                            <td>{{$predio->comuna}}</td>
                         </tr>
-                    {{-- @endforeach --}}
+                    @endforeach
                     </table>
             </div>
         </div>
