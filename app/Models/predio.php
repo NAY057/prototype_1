@@ -27,8 +27,16 @@ class predio extends Model
         return $this->belongsTo(apelacion_subsidio::class);
     }
 
-    public function auditoria(){
-        return $this->belongsTo(auditoria::class);
+    // public function auditoria(){
+    //     return $this->belongsTo(auditoria::class);
+    // }
+    
+    public function predios(){
+        return $this->hasMany(auditoria::class);
+    }
+
+    public function usuario(){
+        return $this->belongsTo(User::class);
     }
 
     // use HasFactory;

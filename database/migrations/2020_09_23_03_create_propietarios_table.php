@@ -17,8 +17,8 @@ class CreatePropietariosTable extends Migration
             $table->bigIncrements('idpropietario');
             $table->integer('numerodocumento');
             $table->string('nombre', 120);
-            $table->string('telefono', 15);
-            $table->string('correoelectronico', 130);
+            $table->string('telefono', 15)->nullable($value = true);
+            $table->string('correoelectronico', 130)->nullable($value = true);
             $table->timestamps();
         });
     }

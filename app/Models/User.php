@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public function predios(){
+        return $this->hasMany(predio::class);
+    }
     use HasFactory, Notifiable;
 
     /**

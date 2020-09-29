@@ -17,8 +17,8 @@ class CreateAuditoriasTable extends Migration
             $table->bigIncrements('idauditorias');
             $table->bigIncrements('id_predio')->unsigned()->autoIncrement(false);
             $table->foreign('id_predio')->references('idpredio')->on('predios')->onDelete('cascade')->onUpdate('cascade');
-            $table->dateTime('fechamodificacion', 0);
-            $table->string('cambio', 254);
+            $table->dateTime('fechamodificacion', 0)->nullable( $value = true );
+            $table->string('cambio', 254)->nullable( $value = true );
             $table->timestamps();
         });
     }
