@@ -15,8 +15,8 @@ class CreatePropietariosTable extends Migration
     {
         Schema::create('propietarios', function (Blueprint $table) {
             $table->bigIncrements('idpropietario');
-            $table->integer('numerodocumento');
-            $table->string('nombre', 120);
+            $table->bigIncrements('numerodocumento')->nullable($value = false)->autoIncrement(false);
+            $table->string('nombre', 120)->nullable($value = false);
             $table->string('telefono', 15)->nullable($value = true);
             $table->string('correoelectronico', 130)->nullable($value = true);
             $table->timestamps();

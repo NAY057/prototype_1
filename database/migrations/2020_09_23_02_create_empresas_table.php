@@ -15,11 +15,11 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->bigIncrements('idempresa');
-            $table->integer('productoceo')->unique()->nullable($value = false);
-            $table->integer('matriculaacueducto')->unique()->nullable($value = false);
-            $table->integer('matriculacantarillado')->unique()->nullable($value = false);
-            $table->integer('contratourbaser')->unique()->nullable($value = false);
-            $table->integer('codigousuarioalcanos')->unique()->nullable($value = false);
+            $table->bigIncrements('productoceo')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->bigIncrements('matriculaacueducto')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->bigIncrements('matriculacantarillado')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->bigIncrements('contratourbaser')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->bigIncrements('codigousuarioalcanos')->unique()->nullable($value = true)->autoIncrement(false);
             $table->timestamps();
         });
     }

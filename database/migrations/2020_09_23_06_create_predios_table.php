@@ -16,39 +16,39 @@ class CreatePrediosTable extends Migration
         Schema::create('predios', function (Blueprint $table) {
             $table->bigIncrements('idpredio');
 
-            $table->bigIncrements('id_empresa')->unsigned()->autoIncrement(false);
+            $table->bigIncrements('id_empresa')->unsigned()->autoIncrement(false)->nullable($value = true);
             $table->foreign('id_empresa')->references('idempresa')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->bigIncrements('id_revisionestrato')->unsigned()->autoIncrement(false);
+            $table->bigIncrements('id_revisionestrato')->unsigned()->autoIncrement(false)->nullable($value = true);
             $table->foreign('id_revisionestrato')->references('idrevisionestrato')->on('revision_estratos')->onDelete('cascade')->onUpdate('cascade');
-            
-            $table->bigIncrements('id_propietario')->unsigned()->autoIncrement(false);
+
+            $table->bigIncrements('id_propietario')->unsigned()->autoIncrement(false)->nullable($value = false);
             $table->foreign('id_propietario')->references('idpropietario')->on('propietarios')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->bigIncrements('id_recursoreposicion')->unsigned()->autoIncrement(false);
+            $table->bigIncrements('id_recursoreposicion')->unsigned()->autoIncrement(false)->nullable($value = true);
             $table->foreign('id_recursoreposicion')->references('idrecursoreposicion')->on('recurso_reposicions')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->bigIncrements('id_subsidioapelacion')->unsigned()->autoIncrement(false);
+            $table->bigIncrements('id_subsidioapelacion')->unsigned()->autoIncrement(false)->nullable($value = true);
             $table->foreign('id_subsidioapelacion')->references('idsubsidioapelacion')->on('apelacion_subcidios')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->bigIncrements('id_user')->unsigned()->autoIncrement(false);
+            $table->bigIncrements('id_user')->unsigned()->autoIncrement(false)->nullable($value = false);
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('codpredial')->nullable($value = true);
-            $table->integer('matricula')->unique()->nullable($value = true);
-            $table->string('tipopredio')->length(30)->nullable($value = true);
-            $table->string('destinoeconomico')->length(45)->nullable($value = true);
-            $table->string('areaterreno')->length(10)->nullable($value = false);
-            $table->double('areaedificada', 6, 2)->nullable($value = false);
-            $table->double('avaluopredio', 12, 2);
-            $table->string('clase')->length(30);
-            $table->string('direccion')->length(120)->nullable($value = true);
-            $table->string('barriovereda')->length(50)->nullable($value = true);
-            $table->string('comuna')->length(50)->nullable($value = true);
-            $table->string('latitud')->length(45);
-            $table->string('longitud')->length(40);
-            $table->string('uso')->length(45)->nullable($value = true);
-            $table->integer('estratoactual')->nullable($value = true);
+            $table->bigIncrements('codpredial')->nullable($value = false)->autoIncrement(false);
+            $table->bigIncrements('matricula')->unique()->nullable($value = false)->autoIncrement(false);
+            $table->string('tipopredio')->length(30)->nullable($value = false);
+            $table->string('destinoeconomico')->length(45)->nullable($value = false);
+            $table->string('areaterreno')->length(10)->nullable($value = true);
+            $table->double('areaedificada', 6, 2)->nullable($value = true);
+            $table->double('avaluopredio', 12, 2)->nullable($value = true);
+            $table->string('clase')->length(30)->nullable($value = true);
+            $table->string('direccion')->length(120)->nullable($value = false);
+            $table->string('barriovereda')->length(50)->nullable($value = false);
+            $table->string('comuna')->length(50)->nullable($value = false);
+            $table->string('latitud')->length(45)->nullable($value = true);
+            $table->string('longitud')->length(40)->nullable($value = true);
+            $table->string('uso')->length(45)->nullable($value = false);
+            $table->integer('estratoactual')->nullable($value = false);
             $table->string('observaciones')->length(250);
             $table->timestamps();
         });

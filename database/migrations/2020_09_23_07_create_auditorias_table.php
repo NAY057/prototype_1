@@ -15,10 +15,10 @@ class CreateAuditoriasTable extends Migration
     {
         Schema::create('auditorias', function (Blueprint $table) {
             $table->bigIncrements('idauditorias');
-            $table->bigIncrements('id_predio')->unsigned()->autoIncrement(false);
+            $table->bigIncrements('id_predio')->unsigned()->autoIncrement(false)->nullable( $value = false );
             $table->foreign('id_predio')->references('idpredio')->on('predios')->onDelete('cascade')->onUpdate('cascade');
-            $table->dateTime('fechamodificacion', 0)->nullable( $value = true );
-            $table->string('cambio', 254)->nullable( $value = true );
+            $table->dateTime('fechamodificacion', 0)->nullable( $value = false );
+            $table->string('cambio', 254)->nullable( $value = false );
             $table->timestamps();
         });
     }

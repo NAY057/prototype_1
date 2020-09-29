@@ -15,13 +15,13 @@ class CreateRevisionEstratosTable extends Migration
     {
         Schema::create('revision_estratos', function (Blueprint $table) {
             $table->bigIncrements('idrevisionestrato');
-            $table->string('radicadosolicitudrevest', 120)->unique()->nullable($value = false);
-            $table->dateTime('fecharadicado', 0)->nullable($value = false);
-            $table->integer('radicadorespuestarevest')->unique()->nullable($value = false);
-            $table->dateTime('fecharespuestarevest', 0)->nullable($value = false);
-            $table->string('notificacionrevest', 254)->nullable($value = false);
-            $table->string('modificacionrevest', 10)->nullable($value = false);
-            $table->integer('nuevoestratorevest')->nullable($value = false);
+            $table->string('radicadosolicitudrevest', 120)->unique()->nullable($value = true);
+            $table->dateTime('fecharadicado', 0)->nullable($value = true);
+            $table->bigIncrements('radicadorespuestarevest')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->dateTime('fecharespuestarevest', 0)->nullable($value = true);
+            $table->string('notificacionrevest', 254)->nullable($value = true);
+            $table->string('modificacionrevest', 10)->nullable($value = true);
+            $table->integer('nuevoestratorevest')->nullable($value = true);
             $table->timestamps();
         });
     }

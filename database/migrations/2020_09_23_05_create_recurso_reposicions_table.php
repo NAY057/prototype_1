@@ -15,13 +15,13 @@ class CreateRecursoReposicionsTable extends Migration
     {
         Schema::create('recurso_reposicions', function (Blueprint $table) {
             $table->bigIncrements('idrecursoreposicion');
-            $table->string('radicadosolicitudrecrep', 120)->unique()->nullable($value = false);
-            $table->dateTime('fechasolicitudrecrep', 0)->nullable($value = false);
-            $table->integer('radicadorespuestarecrep')->unique()->nullable($value = false);
-            $table->dateTime('fecharespuestarecrep', 0)->nullable($value = false);
-            $table->string('notificacionrecrep', 254)->nullable($value = false);
-            $table->string('modificacionrecrep', 10)->nullable($value = false);
-            $table->integer('nuevoestratorecrep')->nullable($value = false);
+            $table->string('radicadosolicitudrecrep', 120)->unique()->nullable($value = true);
+            $table->dateTime('fechasolicitudrecrep', 0)->nullable($value = true);
+            $table->bigIncrements('radicadorespuestarecrep')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->dateTime('fecharespuestarecrep', 0)->nullable($value = true);
+            $table->string('notificacionrecrep', 254)->nullable($value = true);
+            $table->string('modificacionrecrep', 10)->nullable($value = true);
+            $table->integer('nuevoestratorecrep')->nullable($value = true);
             $table->timestamps();
         });
     }
