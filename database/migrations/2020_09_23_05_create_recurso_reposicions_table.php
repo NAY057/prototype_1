@@ -14,14 +14,14 @@ class CreateRecursoReposicionsTable extends Migration
     public function up()
     {
         Schema::create('recurso_reposicions', function (Blueprint $table) {
-            $table->bigIncrements('idrecursoreposicion');
-            $table->string('radicadosolicitudrecrep', 120)->unique()->nullable($value = true);
-            $table->dateTime('fechasolicitudrecrep', 0)->nullable($value = true);
-            $table->bigIncrements('radicadorespuestarecrep')->unique()->nullable($value = true)->autoIncrement(false);
-            $table->dateTime('fecharespuestarecrep', 0)->nullable($value = true);
-            $table->string('notificacionrecrep', 254)->nullable($value = true);
-            $table->string('modificacionrecrep', 10)->nullable($value = true);
-            $table->integer('nuevoestratorecrep')->nullable($value = true);
+            $table->bigIncrements('idreposicionrecurso');
+            $table->string('radicadosolicitudreprec', 120)->unique()->nullable($value = true);
+            $table->dateTime('fechasolicitudreprec', 0)->nullable($value = true);
+            $table->bigIncrements('radicadorespuestareprec')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->dateTime('fecharespuestareprec', 0)->nullable($value = true);
+            $table->string('notificacionreprec', 254)->nullable($value = true);
+            $table->string('modificacionreprec', 10)->nullable($value = true);
+            $table->integer('nuevoestratoreprec')->nullable($value = true);
             $table->timestamps();
         });
     }

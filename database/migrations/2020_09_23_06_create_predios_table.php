@@ -26,10 +26,10 @@ class CreatePrediosTable extends Migration
             $table->foreign('id_propietario')->references('idpropietario')->on('propietarios')->onDelete('cascade')->onUpdate('cascade');
             
             $table->bigIncrements('id_recursoreposicion')->unsigned()->autoIncrement(false)->nullable($value = true);
-            $table->foreign('id_recursoreposicion')->references('idrecursoreposicion')->on('recurso_reposicions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_recursoreposicion')->references('idreposicionrecurso')->on('recurso_reposicions')->onDelete('cascade')->onUpdate('cascade');
             
             $table->bigIncrements('id_subsidioapelacion')->unsigned()->autoIncrement(false)->nullable($value = true);
-            $table->foreign('id_subsidioapelacion')->references('idsubsidioapelacion')->on('apelacion_subcidios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_subsidioapelacion')->references('idapelacionsubsidio')->on('apelacion_subcidios')->onDelete('cascade')->onUpdate('cascade');
             
             $table->bigIncrements('id_user')->unsigned()->autoIncrement(false)->nullable($value = false);
             $table->foreign('id_user')->references('iduser')->on('users')->onDelete('cascade')->onUpdate('cascade');
@@ -48,7 +48,7 @@ class CreatePrediosTable extends Migration
             $table->string('latitud')->length(45)->nullable($value = true);
             $table->string('longitud')->length(40)->nullable($value = true);
             $table->string('uso')->length(45)->nullable($value = false);
-            $table->integer('estratoactual')->nullable($value = false);
+            $table->integer('estratopredio')->nullable($value = false);
             $table->string('observaciones')->length(250);
             $table->dateTime('fecha', 0)->nullable($value = false);
             $table->timestamps();

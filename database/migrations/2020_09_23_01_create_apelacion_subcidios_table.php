@@ -14,13 +14,13 @@ class CreateApelacionSubcidiosTable extends Migration
     public function up()
     {
         Schema::create('apelacion_subcidios', function (Blueprint $table) {
-            $table->bigIncrements('idsubsidioapelacion');
-            $table->string('subsidioapelacion', 120)->unique()->nullable($value = true);
+            $table->bigIncrements('idapelacionsubsidio');
+            $table->string('apelacionsubsidio', 120)->unique()->nullable($value = true);
             $table->bigIncrements('remisorio')->unique()->nullable($value = true)->autoIncrement(false);
             $table->dateTime('fechaoficioremisorio', 0)->nullable($value = true);
-            $table->string('notificacionofirem', 254)->nullable($value = true);
-            $table->string('modificacionsubape', 45)->nullable($value = true);
-            $table->integer('nuevoestratosubape')->nullable($value = true);
+            $table->string('notificacionapesub', 254)->nullable($value = true);
+            $table->string('modificacionapesub', 45)->nullable($value = true);
+            $table->integer('estratoapesub')->nullable($value = true);
             $table->timestamps();
         });
     }

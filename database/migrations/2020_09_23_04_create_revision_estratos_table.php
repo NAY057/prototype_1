@@ -21,7 +21,7 @@ class CreateRevisionEstratosTable extends Migration
             $table->dateTime('fecharespuestarevest', 0)->nullable($value = true);
             $table->string('notificacionrevest', 254)->nullable($value = true);
             $table->string('modificacionrevest', 10)->nullable($value = true);
-            $table->integer('nuevoestratorevest')->nullable($value = true);
+            $table->integer('estratorevest')->nullable($value = true);
             $table->timestamps();
         });
     }
