@@ -17,7 +17,7 @@ class CreateEmpresasTable extends Migration
             $table->bigIncrements('idempresa');
             $table->bigIncrements('productoceo')->unique()->nullable($value = true)->autoIncrement(false);
             $table->bigIncrements('matriculaacueducto')->unique()->nullable($value = true)->autoIncrement(false);
-            $table->bigIncrements('matriculacantarillado')->unique()->nullable($value = true)->autoIncrement(false);
+            $table->bigIncrements('matriculaalcantarillado')->unique()->nullable($value = true)->autoIncrement(false);
             $table->bigIncrements('contratourbaser')->unique()->nullable($value = true)->autoIncrement(false);
             $table->bigIncrements('codigousuarioalcanos')->unique()->nullable($value = true)->autoIncrement(false);
             $table->timestamps();

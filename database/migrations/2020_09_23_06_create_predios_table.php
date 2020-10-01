@@ -32,7 +32,7 @@ class CreatePrediosTable extends Migration
             $table->foreign('id_subsidioapelacion')->references('idsubsidioapelacion')->on('apelacion_subcidios')->onDelete('cascade')->onUpdate('cascade');
             
             $table->bigIncrements('id_user')->unsigned()->autoIncrement(false)->nullable($value = false);
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_user')->references('iduser')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->bigIncrements('codpredial')->nullable($value = false)->autoIncrement(false);
             $table->bigIncrements('matricula')->unique()->nullable($value = false)->autoIncrement(false);
@@ -50,6 +50,7 @@ class CreatePrediosTable extends Migration
             $table->string('uso')->length(45)->nullable($value = false);
             $table->integer('estratoactual')->nullable($value = false);
             $table->string('observaciones')->length(250);
+            $table->dateTime('fecha', 0)->nullable($value = false);
             $table->timestamps();
         });
     }
